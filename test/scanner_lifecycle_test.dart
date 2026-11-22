@@ -436,6 +436,36 @@ void main() {
     expect(controller.status, AutomaticScanStatus.waiting);
   });
 
+  testWidgets('iOS opens one system sheet per tap and ignores inactive', (
+    tester,
+  ) async {
+    final reader = _Reader();
+    final (game, _, _) = await _launch(tester, reader);
+    expect(reader.reads, isEmpty);
+
+    await flow.tapKey(tester, 'scan-native-start');
+    expect(reader.reads, hasLength(1));
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+    await tester.pump();
+    expect(reader.cancellations, 0);
+    reader.deliver(0, GameEngine.checkpointUid(1));
+    await tester.pumpAndSettle();
+    expect(game.scanCalls, 1);
+    await flow.tapKey(tester, 'scan-result-dismiss');
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+    await tester.pump(const Duration(seconds: 1));
+    expect(reader.reads, hasLength(1));
+
+    await flow.tapKey(tester, 'scan-native-start');
+    expect(reader.reads, hasLength(2));
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.hidden);
+    await tester.pumpAndSettle();
+    expect(reader.cancellations, 1);
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+    await tester.pumpAndSettle();
+    expect(reader.reads, hasLength(2));
+  }, variant: const TargetPlatformVariant({TargetPlatform.iOS}));
+
   testWidgets('fixtures remain usable after hardware failure and serialize', (
     tester,
   ) async {

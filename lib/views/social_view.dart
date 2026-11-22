@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -48,6 +49,12 @@ class _ScanViewState extends State<ScanView>
   late final AutomaticScanController scanner;
   ModalRoute<dynamic>? _route;
   late int _scannerRevision;
+  final _opensSystemSheet =
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  bool _isForeground(AppLifecycleState state) =>
+      state == AppLifecycleState.resumed ||
+      (_opensSystemSheet && state == AppLifecycleState.inactive);
   static const _stationFixtures = {
     'station-1': 1,
     'station-2': 2,
@@ -64,10 +71,12 @@ class _ScanViewState extends State<ScanView>
           widget.reader ??
           createNtagReader(promptProvider: () => context.l10n.domainNfcPrompt),
       onUid: _submit,
+      opensSystemSheet: _opensSystemSheet,
     );
     scanner.setResumed(
-      (WidgetsBinding.instance.lifecycleState ?? AppLifecycleState.resumed) ==
-          AppLifecycleState.resumed,
+      _isForeground(
+        WidgetsBinding.instance.lifecycleState ?? AppLifecycleState.resumed,
+      ),
     );
     scanner.setBlocked(widget.vm.busy || !widget.vm.canScan);
     scanner.addListener(_scannerChanged);
@@ -130,13 +139,14 @@ class _ScanViewState extends State<ScanView>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) =>
-      scanner.setResumed(state == AppLifecycleState.resumed);
+      scanner.setResumed(_isForeground(state));
 
   bool get _mayPresent =>
       mounted &&
       (_route?.isCurrent ?? false) &&
-      (WidgetsBinding.instance.lifecycleState ?? AppLifecycleState.resumed) ==
-          AppLifecycleState.resumed;
+      _isForeground(
+        WidgetsBinding.instance.lifecycleState ?? AppLifecycleState.resumed,
+      );
 
   @override
   void dispose() {
@@ -269,11 +279,12 @@ class _ScanViewState extends State<ScanView>
   }
 
   Widget _scannerStatus(BuildContext context) {
-    final (icon, title) = switch (scanner.status) {
+    final content = switch (scanner.status) {
       AutomaticScanStatus.paused => (
         Icons.pause_circle_outline,
         context.l10n.socialScanPaused,
       ),
+      AutomaticScanStatus.idle => null,
       AutomaticScanStatus.starting => (
         Icons.nfc,
         context.l10n.socialScanStarting,
@@ -295,6 +306,15 @@ class _ScanViewState extends State<ScanView>
         context.l10n.socialScanError,
       ),
     };
+    if (content == null) {
+      return FilledButton.icon(
+        key: const ValueKey('scan-native-start'),
+        onPressed: scanner.startScan,
+        icon: const Icon(Icons.nfc),
+        label: Text(context.l10n.scan),
+      );
+    }
+    final (icon, title) = content;
     return Card(
       child: Padding(
         key: ValueKey('scan-state-${scanner.status.name}'),

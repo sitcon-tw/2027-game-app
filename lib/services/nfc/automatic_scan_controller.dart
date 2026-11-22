@@ -6,6 +6,7 @@ import 'ntag_reader.dart';
 
 enum AutomaticScanStatus {
   paused,
+  idle,
   starting,
   waiting,
   processing,
@@ -21,11 +22,14 @@ class AutomaticScanController extends ChangeNotifier {
     required this._reader,
     required this._onUid,
     this.rearmDelay = const Duration(milliseconds: 400),
+    this.opensSystemSheet = false,
   });
 
   final NtagReader _reader;
   final Future<void> Function(String uid) _onUid;
   final Duration rearmDelay;
+  final bool opensSystemSheet;
+  bool _sheetRequested = false;
   bool _routeVisible = false;
   bool _resumed = false;
   bool _blocked = false;
@@ -50,6 +54,7 @@ class AutomaticScanController extends ChangeNotifier {
     if (_handling || _blocked) return AutomaticScanStatus.processing;
     if (_error != null) return AutomaticScanStatus.error;
     if (_userCancelled) return AutomaticScanStatus.cancelled;
+    if (opensSystemSheet && _readToken == null) return AutomaticScanStatus.idle;
     return _ready ? AutomaticScanStatus.waiting : AutomaticScanStatus.starting;
   }
 
@@ -88,10 +93,21 @@ class AutomaticScanController extends ChangeNotifier {
     _reconcile();
   }
 
+  void startScan() {
+    if (status != AutomaticScanStatus.idle) return;
+    _sheetRequested = true;
+    _lastUid = null;
+    _reconcile();
+  }
+
   void retry() {
     if (!_eligible || !needsRetry) return;
     _error = null;
     _userCancelled = false;
+    if (opensSystemSheet) {
+      startScan();
+      return;
+    }
     _notify();
     _reconcile();
   }
@@ -117,6 +133,7 @@ class AutomaticScanController extends ChangeNotifier {
   }
 
   void _disarm() {
+    _sheetRequested = false;
     _rearmTimer?.cancel();
     _rearmTimer = null;
     _ready = false;
@@ -150,11 +167,13 @@ class AutomaticScanController extends ChangeNotifier {
   void _reconcile() {
     if (!_eligible ||
         needsRetry ||
+        (opensSystemSheet && !_sheetRequested) ||
         _readToken != null ||
         _cancelling != null ||
         _rearmTimer != null) {
       return;
     }
+    _sheetRequested = false;
     final token = Object();
     _readToken = token;
     _ready = false;
@@ -211,6 +230,7 @@ class AutomaticScanController extends ChangeNotifier {
   }
 
   void _scheduleRearm() {
+    if (opensSystemSheet) return;
     if (!_eligible || needsRetry) {
       _reconcile();
       return;
