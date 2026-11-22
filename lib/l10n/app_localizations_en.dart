@@ -2335,7 +2335,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get socialBindingCompleteHint =>
-      'Scan this tag to claim the station\'s packs.';
+      'Players can scan this tag in Player mode when the station is open.';
 
   @override
   String get utilityBattleHistory => 'Battle history';

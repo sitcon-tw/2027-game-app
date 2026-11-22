@@ -621,7 +621,7 @@
   "socialBindingUnauthorized": "需要站點綁定權限",
   "socialChooseStation": "請先選擇站點",
   "socialBindingComplete": "綁定成功",
-  "socialBindingCompleteHint": "掃描此 NTAG 即可領取站點卡包。",
+  "socialBindingCompleteHint": "發卡站開放時，玩家可在一般玩家模式掃描此 NTAG 領取卡包。",
   "utilityBattleHistory": "對戰紀錄",
   "utilityLedger": "卡牌與金幣紀錄",
   "utilityRoundResult": "回合 {round} · {result}",

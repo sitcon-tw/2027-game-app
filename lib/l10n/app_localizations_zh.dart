@@ -2172,7 +2172,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get socialBindingComplete => '綁定成功';
 
   @override
-  String get socialBindingCompleteHint => '掃描此 NTAG 即可領取站點卡包。';
+  String get socialBindingCompleteHint => '發卡站開放時，玩家可在一般玩家模式掃描此 NTAG 領取卡包。';
 
   @override
   String get utilityBattleHistory => '對戰紀錄';

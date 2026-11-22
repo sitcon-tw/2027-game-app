@@ -888,6 +888,30 @@ void main() {
     },
   );
 
+  testWidgets('a newly bound physical tag can be scanned again as staff', (
+    tester,
+  ) async {
+    final reader = _Reader();
+    final (game, _, _) = await _launch(
+      tester,
+      reader,
+      role: AccountRole.staff,
+      checkedIn: false,
+    );
+    final station = game.stations.first;
+    reader.deliver(0, GameEngine.unknownUid);
+    await tester.pumpAndSettle();
+    await flow.tapKey(tester, 'station-option-${station.id}');
+    await flow.tapKey(tester, 'station-bind');
+    await tester.pumpAndSettle();
+    await flow.tapKey(tester, 'message-dismiss');
+    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 400));
+    reader.deliver(reader.reads.length - 1, GameEngine.unknownUid);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('operator-station-info')), findsOneWidget);
+  });
+
   testWidgets(
     'mode changes invalidate native callbacks and user mode requires onboarding',
     (tester) async {

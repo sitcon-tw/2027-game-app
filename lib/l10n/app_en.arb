@@ -1411,7 +1411,7 @@
   "socialBindingUnauthorized": "Station binding permission required",
   "socialChooseStation": "Select a station first",
   "socialBindingComplete": "Tag bound",
-  "socialBindingCompleteHint": "Scan this tag to claim the station's packs.",
+  "socialBindingCompleteHint": "Players can scan this tag in Player mode when the station is open.",
   "utilityBattleHistory": "Battle history",
   "utilityLedger": "Cards and coins",
   "utilityRoundResult": "Round {round} · {result}",

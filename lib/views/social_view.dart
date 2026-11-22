@@ -48,6 +48,12 @@ class _ScanViewState extends State<ScanView>
   late final AutomaticScanController scanner;
   ModalRoute<dynamic>? _route;
   late int _scannerRevision;
+  static const _stationFixtures = {
+    'station-1': 1,
+    'station-2': 2,
+    'station-3': 3,
+    'station-4': 4,
+  };
 
   @override
   void initState() {
@@ -157,10 +163,11 @@ class _ScanViewState extends State<ScanView>
     }
     if (mode != ScannerMode.user || result.kind == 'boothComplete') {
       if (mode == ScannerMode.staff && result.kind == 'bindStation') {
-        await openPage(
+        final bound = await openPage<bool>(
           context,
           StationBindingView(vm: widget.vm, uid: result.uid ?? value),
         );
+        if (mounted && bound == true) scanner.resetContext();
       } else {
         await openPage(
           context,
@@ -200,12 +207,8 @@ class _ScanViewState extends State<ScanView>
       }
     } else {
       if (result.kind == 'checkpoint') {
-        final normalized = value
-            .replaceAll(RegExp('[^a-fA-F0-9]'), '')
-            .toUpperCase();
-        final points = widget.vm.checkpoints.where(
-          (p) => TestTagIds.checkpointUid(p.number) == normalized,
-        );
+        final number = result.message.args['number'];
+        final points = widget.vm.checkpoints.where((p) => p.number == number);
         final point = points.isEmpty ? null : points.first;
         await showDialog<void>(
           context: context,
@@ -484,29 +487,28 @@ class _ScanViewState extends State<ScanView>
                                 submit(uid.text);
                               },
                       ),
-                    for (var i = 0; i < widget.vm.stations.length; i++)
-                      ListTile(
-                        key: ValueKey('scan-fixture-station-${i + 1}'),
-                        leading: const Icon(Icons.inventory_2_outlined),
-                        title: Text(
-                          stationName(context, widget.vm.stations[i]),
-                        ),
-                        subtitle: Text(
-                          context.l10n.socialStationFixture(
-                            widget.vm.stations[i].packs,
-                            widget.vm.stations[i].open
-                                ? context.l10n.socialOpen
-                                : context.l10n.socialClosed,
-                            widget.vm.stations[i].remaining,
+                    for (final station in widget.vm.stations)
+                      if (_stationFixtures[station.id] case final fixture?)
+                        ListTile(
+                          key: ValueKey('scan-fixture-station-$fixture'),
+                          leading: const Icon(Icons.inventory_2_outlined),
+                          title: Text(stationName(context, station)),
+                          subtitle: Text(
+                            context.l10n.socialStationFixture(
+                              station.packs,
+                              station.open
+                                  ? context.l10n.socialOpen
+                                  : context.l10n.socialClosed,
+                              station.remaining,
+                            ),
                           ),
+                          onTap: widget.vm.busy || scanner.processing
+                              ? null
+                              : () {
+                                  uid.text = TestTagIds.stationUid(fixture);
+                                  submit(uid.text);
+                                },
                         ),
-                        onTap: widget.vm.busy || scanner.processing
-                            ? null
-                            : () {
-                                uid.text = TestTagIds.stationUid(i + 1);
-                                submit(uid.text);
-                              },
-                      ),
                     ListTile(
                       key: const ValueKey('scan-fixture-unknown'),
                       leading: const Icon(Icons.help_outline),
@@ -1426,7 +1428,7 @@ class _StationBindingViewState extends State<StationBindingView> {
                       context.l10n.socialBindingComplete,
                       context.l10n.socialBindingCompleteHint,
                     );
-                    if (context.mounted) Navigator.pop(context);
+                    if (context.mounted) Navigator.pop(context, true);
                   }
                 },
         ),

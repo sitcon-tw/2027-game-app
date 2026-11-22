@@ -3833,7 +3833,7 @@ abstract class AppLocalizations {
   /// No description provided for @socialBindingCompleteHint.
   ///
   /// In en, this message translates to:
-  /// **'Scan this tag to claim the station\'s packs.'**
+  /// **'Players can scan this tag in Player mode when the station is open.'**
   String get socialBindingCompleteHint;
 
   /// No description provided for @utilityBattleHistory.
