@@ -104,7 +104,12 @@ class _Game extends GameEngine {
 
 class _RemoteStationGame extends _Game implements RemoteStationFixtures {
   @override
-  final stationFixtureUids = const {'station-remote': '04A70000000042'};
+  Map<String, String>? stationFixtureUids;
+
+  void publishStationFixtures(Map<String, String>? uids) {
+    stationFixtureUids = uids;
+    notifyListeners();
+  }
 }
 
 class _LiveGame extends _Game implements Multiplayer {
@@ -625,7 +630,7 @@ void main() {
     },
   );
 
-  testWidgets('remote list shows unbound stations and scans the bound UID', (
+  testWidgets('server enables the open scanner list without a client flag', (
     tester,
   ) async {
     final game = _RemoteStationGame();
@@ -637,7 +642,17 @@ void main() {
     }
     await game.configureRole(AccountRole.staff);
     await game.bindStation('04A70000000042', 'station-remote');
-    await _launch(tester, _Reader(), fixtures: true, service: game);
+    await _launch(tester, _Reader(), service: game);
+    final input = find.byKey(const ValueKey('scan-uid'));
+    expect(input, findsNothing);
+    game.publishStationFixtures(const {'station-remote': '04A70000000042'});
+    await tester.pumpAndSettle();
+    expect(input, findsOneWidget);
+    game.publishStationFixtures(null);
+    await tester.pumpAndSettle();
+    expect(input, findsNothing);
+    game.publishStationFixtures(const {'station-remote': '04A70000000042'});
+    await tester.pumpAndSettle();
     final unbound = find.byKey(
       const ValueKey('scan-fixture-station-station-unbound'),
     );

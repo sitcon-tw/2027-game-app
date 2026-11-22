@@ -87,6 +87,7 @@ class _ScanViewState extends State<ScanView>
       scanner.resetContext();
     }
     scanner.setBlocked(widget.vm.busy || !widget.vm.canScan);
+    if (mounted) setState(() {});
   }
 
   @override
@@ -390,7 +391,7 @@ class _ScanViewState extends State<ScanView>
         const SizedBox(height: 8),
         Text(context.l10n.socialScanDuplicateHint, textAlign: TextAlign.center),
         const SizedBox(height: 24),
-        if (widget.vm.testToolsEnabled)
+        if (widget.vm.testToolsEnabled || widget.vm.stationFixtureUids != null)
           Section(
             context.l10n.socialTestScan,
             icon: Icons.science_outlined,
