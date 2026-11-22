@@ -49,6 +49,14 @@ mise exec -- flutter run \
 - 測試：`mise exec -- flutter test`
 - 離線測試 APK：`mise exec -- flutter build apk --release --dart-define=APP_MODE=demo`
 
+## 多語系
+
+1. 在 `lib/l10n/app_en.arb` 新增或修改英文文字；有參數時在 `@key` 設定 placeholder 的名稱與型別。
+2. 在 `app_zh.arb` 和 `app_zh_TW.arb` 更新同一個 key，保留相同的 placeholder 名稱。
+3. 執行 `mise exec -- flutter gen-l10n`，一併提交 ARB 與產生的 `app_localizations*.dart`，不要手動編輯產生檔。
+
+畫面文字使用 `context.l10n`（從 `lib/l10n/localization.dart` 匯入）。遊戲或 API 回傳的訊息代碼在 `lib/l10n/game_text.dart` 透過 `gameText` 轉成顯示文字。
+
 ## 補充
 
 - 實體掃描支援 NTAG213／215／216，只讀取 UID；請用真機驗證 NFC。
