@@ -14,4 +14,5 @@ abstract interface class DemoControls {
   );
   Future<void> simulatePhotoReward();
   Future<void> simulateBoothCompletion(String boothId);
+  Future<ScanResult> scanDemoStation(String stationId, String scanId, ScannerMode mode);
 }

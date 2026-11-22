@@ -151,10 +151,11 @@ class _ScanViewState extends State<ScanView>
   Future<void> submit(String value) => scanner.submitFixture(value.trim());
 
   Future<void> _submit(String value) async {
-    uid.text = value;
+    final demoStation = widget.vm.isOfflineDemo && value.startsWith('station-');
+    if (!demoStation) uid.text = value;
     final revision = widget.vm.scannerRevision;
     final mode = widget.vm.scannerMode;
-    final result = await widget.vm.scan(value.trim());
+    final result = await widget.vm.scan(value.trim(), demoStation: demoStation);
     if (!mounted ||
         result == null ||
         !_mayPresent ||
@@ -488,9 +489,12 @@ class _ScanViewState extends State<ScanView>
                               },
                       ),
                     for (final station in widget.vm.stations)
-                      if (_stationFixtures[station.id] case final fixture?)
+                      if (widget.vm.isOfflineDemo ||
+                          _stationFixtures.containsKey(station.id))
                         ListTile(
-                          key: ValueKey('scan-fixture-station-$fixture'),
+                          key: ValueKey(
+                            'scan-fixture-station-${_stationFixtures[station.id] ?? station.id}',
+                          ),
                           leading: const Icon(Icons.inventory_2_outlined),
                           title: Text(stationName(context, station)),
                           subtitle: Text(
@@ -505,8 +509,13 @@ class _ScanViewState extends State<ScanView>
                           onTap: widget.vm.busy || scanner.processing
                               ? null
                               : () {
-                                  uid.text = TestTagIds.stationUid(fixture);
-                                  submit(uid.text);
+                                  if (widget.vm.isOfflineDemo) {
+                                    submit(station.id);
+                                  } else {
+                                    submit(TestTagIds.stationUid(
+                                      _stationFixtures[station.id]!,
+                                    ));
+                                  }
                                 },
                         ),
                     ListTile(

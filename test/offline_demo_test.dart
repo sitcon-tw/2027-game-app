@@ -88,6 +88,23 @@ void main() {
     await root.delete(recursive: true);
   });
 
+  test('a custom offline station can be scanned without a physical tag', () async {
+    final game = await MockGameService.open(directory: root);
+    addTearDown(game.dispose);
+    await _checkIn(game);
+    const id = 'station-custom';
+    await game.configureStation(
+      Station(id: id, name: 'Custom', packs: 2, limit: 1, remaining: 10, open: true),
+    );
+    final before = game.packs;
+    final first = await game.scanDemoStation(id, 'demo-1', ScannerMode.user);
+    expect(first.message.code, 'stationPacks');
+    expect(game.packs, before + 2);
+    final repeated = await game.scanDemoStation(id, 'demo-2', ScannerMode.user);
+    expect(repeated.message.code, 'stationLimit');
+    expect(game.packs, before + 2);
+  });
+
   test(
     'factory is server-free, active and unregistered on a fresh install',
     () async {

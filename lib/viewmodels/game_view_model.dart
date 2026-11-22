@@ -236,16 +236,17 @@ class GameViewModel extends ChangeNotifier {
   bool hasScanned(String playerId) => canInteractWithRemotePlayer(playerId)
       ? _multiplayer!.scanned.contains(playerId)
       : _scannedPlayers.contains(playerId);
-  Future<ScanResult?> scan(String uid) async {
+  Future<ScanResult?> scan(String uid, {bool demoStation = false}) async {
     if (!canScan) return null;
+    final demo = demoStation ? demoControls : null;
+    if (demoStation && demo == null) return null;
     final mode = scannerMode;
     final revision = scannerRevision;
     final result = await run(() async {
-      final result = await _service.scan(
-        uid,
-        'scan-${DateTime.now().microsecondsSinceEpoch}-${_scanSequence++}',
-        mode: mode,
-      );
+      final scanId = 'scan-${DateTime.now().microsecondsSinceEpoch}-${_scanSequence++}';
+      final result = demo == null
+          ? await _service.scan(uid, scanId, mode: mode)
+          : await demo.scanDemoStation(uid, scanId, mode);
       if (revision != scannerRevision || _disposed) return null;
       if (mode == ScannerMode.user &&
           result.kind == 'player' &&

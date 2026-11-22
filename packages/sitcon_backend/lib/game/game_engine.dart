@@ -1042,7 +1042,31 @@ class GameEngine extends ObservableGameService {
       );
     }
     final stationId = _stationForUid(uid);
-    if (stationId != null) {
+    if (stationId != null) return _claimStation(stationId, scanId, uid);
+    _log('scan.unknown', 'scanId=$scanId UID=$uid 無法辨識');
+    return ScanResult('unknown', const GameMessage('scan.unknown'), uid: uid);
+  }
+
+  Future<ScanResult> scanDemoStation(
+    String stationId,
+    String scanId,
+    ScannerMode mode,
+  ) => _change(() {
+    requireScannerMode(mode);
+    if (mode == ScannerMode.booth) {
+      throw GameStateError(const GameMessage('attendeeBadgeRequired'));
+    }
+    if (mode == ScannerMode.staff) {
+      return ScanResult(
+        'staffStation',
+        const GameMessage('staffStationInfo'),
+        station: stations.firstWhere((s) => s.id == stationId),
+      );
+    }
+    return _claimStation(stationId, scanId, null);
+  });
+
+  ScanResult _claimStation(String stationId, String scanId, String? uid) {
       _active();
       final station = stations.firstWhere((s) => s.id == stationId);
       final claimed = _map('stationClaims')[stationId] as int? ?? 0;
@@ -1063,7 +1087,7 @@ class GameEngine extends ObservableGameService {
       }
       _log(
         'scan.station',
-        'scanId=$scanId UID=$uid $stationId：${message.code}；未開卡包$packs',
+        'scanId=$scanId${uid == null ? '' : ' UID=$uid'} $stationId：${message.code}；未開卡包$packs',
         args: {
           'station': stationId,
           'awarded': awarded,
@@ -1071,9 +1095,6 @@ class GameEngine extends ObservableGameService {
         },
       );
       return ScanResult('station', message, uid: uid, openPacks: awarded);
-    }
-    _log('scan.unknown', 'scanId=$scanId UID=$uid 無法辨識');
-    return ScanResult('unknown', const GameMessage('scan.unknown'), uid: uid);
   }
 
   @override
