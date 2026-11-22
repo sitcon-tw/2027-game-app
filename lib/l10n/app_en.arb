@@ -1,0 +1,1498 @@
+{
+  "@@locale": "en",
+  "appTitle": "SITCON",
+  "cancel": "Cancel",
+  "close": "Close",
+  "done": "Done",
+  "save": "Save",
+  "retry": "Retry",
+  "back": "Back",
+  "confirm": "Confirm",
+  "loading": "Loading…",
+  "noRecords": "No records",
+  "coins": "Coins",
+  "packs": "Packs",
+  "points": "Points",
+  "handCards": "Cards",
+  "friends": "Friends",
+  "planets": "Planets",
+  "checkpoints": "Checkpoints",
+  "tasks": "Tasks",
+  "games": "Game",
+  "profile": "My card",
+  "more": "More",
+  "scan": "Scan",
+  "language": "Language",
+  "languageSystem": "System default",
+  "languageEnglish": "English",
+  "languageTraditionalChinese": "繁體中文",
+  "categoryTechnology": "Technology",
+  "categoryFaction": "Preferences",
+  "categoryInterest": "Interests",
+  "cardScissors": "Scissors",
+  "cardRock": "Rock",
+  "cardPaper": "Paper",
+  "cardWild": "Wild",
+  "seriesSun": "Sun",
+  "seriesEarth": "Earth",
+  "seriesMercury": "Mercury",
+  "seriesMars": "Mars",
+  "seriesSaturn": "Saturn",
+  "seriesMoon": "Moon",
+  "colorGreen": "Green",
+  "colorPink": "Pink",
+  "colorOrange": "Orange",
+  "colorYellow": "Yellow",
+  "colorLightBlue": "Light blue",
+  "colorDarkBlue": "Dark blue",
+  "colorPurple": "Purple",
+  "win": "Win",
+  "loss": "Loss",
+  "draw": "Draw",
+  "baseCard": "Default card",
+  "notAcquired": "Not collected",
+  "locked": "Locked",
+  "attendee": "Attendee",
+  "speaker": "Speaker",
+  "staff": "Staff",
+  "sponsor": "Sponsor",
+  "tagSecurity": "Security",
+  "tagFrontend": "Frontend",
+  "tagBackend": "Backend",
+  "tagAppDevelopment": "App development",
+  "tagGameDevelopment": "Game development",
+  "tagIot": "IoT",
+  "tagBlockchain": "Blockchain",
+  "tagCompetitiveProgramming": "Competitive programming",
+  "tagProgrammingLanguages": "Programming languages",
+  "tagVim": "Vim",
+  "tagVsCode": "VS Code",
+  "tagTabs": "Tabs",
+  "tagSpaces": "Spaces",
+  "tagDarkMode": "Dark mode",
+  "tagCats": "Cats",
+  "tagDogs": "Dogs",
+  "tagUnmixedCurry": "Unmixed curry",
+  "tagMixedCurry": "Mixed curry",
+  "tagNoCilantro": "No cilantro",
+  "tagTaroHotpot": "Taro in hotpot",
+  "tagNightOwl": "Night owl",
+  "tagCoffee": "Coffee",
+  "tagBubbleTea": "Bubble tea",
+  "tagAnime": "Anime",
+  "tagVideoGames": "Video games",
+  "tagBoardGames": "Board games",
+  "tagSports": "Sports",
+  "tagMusic": "Music",
+  "tagPhotography": "Photography",
+  "tagMaker": "Maker",
+  "areaSessions": "Session halls",
+  "areaWhiteboard": "Whiteboard challenge",
+  "areaSponsors": "Sponsor booths",
+  "areaDemos": "Demo booths",
+  "areaBooths": "Booth area",
+  "areaWelcome": "1F Welcoming Zone",
+  "areaDining": "Dining area",
+  "areaStairs": "Stairwell",
+  "areaEventTeam": "Event team",
+  "areaLimited": "Limited edition",
+  "areaMobile": "Mobile checkpoints",
+  "boothCommunity": "SITCON community",
+  "boothOpenSource": "Open-source demo",
+  "boothEvent": "Event team",
+  "stationHelpDesk": "Help desk",
+  "stationRoaming": "Roaming station",
+  "stationClosed": "Closed station",
+  "stationEmpty": "Out-of-stock station",
+  "fixturePlayer": "Demo {number}",
+  "@fixturePlayer": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "domainUnknownParameter": "Unknown game parameter.",
+  "domainInvalidStation": "Invalid station settings.",
+  "domainInvalidUid": "Use a 7-byte NTAG UID (14 hexadecimal digits).",
+  "domainUnsupportedSave": "Saved data version is unsupported. Your progress was kept.",
+  "domainCheckInRequired": "Bind your badge and choose your hashtags first.",
+  "domainInsufficientCoins": "Not enough coins.",
+  "domainPlayerNotFound": "Player not found.",
+  "domainInvalidTags": "Hashtags are duplicated or invalid.",
+  "domainBadgePhase": "Badges can only be bound during the event.",
+  "domainBadgeTaken": "This badge is already bound to another player.",
+  "domainNotBadge": "Scan your own badge.",
+  "domainBadgeLocked": "Your badge is already bound.",
+  "domainNicknameRequired": "Enter a nickname.",
+  "domainContactTooLong": "Contact details must be at most 1,000 characters.",
+  "domainEarlyPhase": "Register for the early reward before the event.",
+  "domainScanIdRequired": "A scan ID is required.",
+  "domainScanIdConflict": "This scan ID belongs to another tag.",
+  "domainScanFirst": "Scan the other player’s badge first.",
+  "domainOpponentCardsLow": "Your opponent needs at least 3 cards.",
+  "domainFriendRequestExpired": "Friend request expired. Scan and invite again.",
+  "domainBattleCannotCancel": "A started battle cannot be cancelled. Timed-out turns play automatically.",
+  "domainNoBattle": "No battle is in progress.",
+  "domainCardUnavailable": "You do not have that card.",
+  "domainWildChoiceRequired": "Choose scissors, rock or paper for the wild card.",
+  "domainNormalCardFixed": "Only a wild card can change its hand.",
+  "domainBattleCardsEmpty": "Battle cards are depleted.",
+  "domainInvalidCardCount": "Invalid card inventory.",
+  "domainPeekTiming": "Use a peek card before playing your turn.",
+  "domainPeekUsed": "A peek card can only be used once per battle.",
+  "domainPeekEmpty": "No peek cards.",
+  "domainPacksEmpty": "No packs to open.",
+  "domainPlanetLocked": "Choose an unlocked planet.",
+  "domainStyleLocked": "This card style is locked.",
+  "domainHintsExhausted": "No new checkpoint hints are available.",
+  "domainStaffRequired": "Staff permission is required.",
+  "domainStationNotFound": "Station not found.",
+  "domainUidReserved": "This UID is already assigned.",
+  "domainAgendaRequired": "Enter an agenda slot.",
+  "domainBoothNotFound": "Booth not found.",
+  "domainInvalidDelivery": "Enter a delivery ID, positive pack count and reason.",
+  "domainDeliveryConflict": "This delivery ID already has different content.",
+  "domainBattleBusy": "Finish your current battle or invitation first.",
+  "domainBattleCooldown": "Battle cooldown is active.",
+  "domainCardsLow": "You need at least 3 cards.",
+  "domainApiNotFound": "API not found.",
+  "domainApiCorsDenied": "Cross-origin request denied.",
+  "domainApiInvalidJson": "Invalid JSON.",
+  "domainApiRequestTimeout": "Request timed out.",
+  "domainApiInternalError": "The server could not complete the request.",
+  "domainApiHostDenied": "Only the local server host is allowed.",
+  "domainApiNetworkDenied": "This network cannot access the test API.",
+  "domainApiOriginDenied": "This website cannot access the API.",
+  "domainApiClosing": "The server is stopping.",
+  "domainApiMethodNotAllowed": "HTTP method not supported.",
+  "domainApiJsonRequired": "Send application/json with UTF-8 encoding.",
+  "domainApiBodyTooLarge": "Request body exceeds 128 KiB.",
+  "domainApiInvalidBody": "Send a JSON object.",
+  "domainApiPlayerActionForbidden": "Player actions cannot use administrator or cheat controls.",
+  "domainApiPlayerNotFound": "Select an initialized player.",
+  "domainApiUnknownAdminAction": "Unknown administrator action.",
+  "domainInvalidTagList": "Choose at most 9 hashtags.",
+  "domainInvalidPhase": "Invalid event phase.",
+  "domainEventInactive": "The event is not active.",
+  "domainInvalidArgument": "Invalid request arguments.",
+  "domainInvalidBindAddress": "The test server only accepts a loopback address.",
+  "domainEventBefore": "The event has not started.",
+  "domainEventEnded": "The event has ended.",
+  "domainParameterRange": "Parameter {parameter} is out of range.",
+  "@domainParameterRange": {
+    "placeholders": {
+      "parameter": {
+        "type": "String"
+      }
+    }
+  },
+  "domainCategoryTagCount": "Choose 1–3 hashtags in {category}.",
+  "@domainCategoryTagCount": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "domainOpposingTags": "Choose either {first} or {second}.",
+  "@domainOpposingTags": {
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "domainCoinsShort": "{amount, plural, one{You need 1 more coin.} other{You need {amount} more coins.}}",
+  "@domainCoinsShort": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "domainAllPlanetsOwned": "All 42 planets are collected.",
+  "domainSeriesOwned": "This series is complete.",
+  "domainHintsEmpty": "{count, plural, one{Complete 1 battle or booth task to earn a hint.} other{Complete {count} battles or booth tasks to earn a hint.}}",
+  "@domainHintsEmpty": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "domainUnknownRanking": "Ranking not supported.",
+  "domainCheckpointHint": "Checkpoint {number}: near {area}.",
+  "@domainCheckpointHint": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "domainCheckpointFound": "Checkpoint {number}: +1 {card}.",
+  "@domainCheckpointFound": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "domainCheckpointRepeat": "Checkpoint {number} already collected.",
+  "@domainCheckpointRepeat": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "domainStationClosed": "This station is closed.",
+  "domainStationLimit": "You have reached this station’s claim limit.",
+  "domainStationEmpty": "This station is out of packs.",
+  "domainStationPacks": "{count, plural, one{Received 1 pack.} other{Received {count} packs.}}",
+  "@domainStationPacks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "domainInvalidGrant": "Enter a positive whole number.",
+  "domainWireVersion": "Update the app to connect to this server.",
+  "domainInvalidApiOrigin": "Invalid server address.",
+  "domainDeviceSessionRequired": "This device is signed out. Use a transfer code from the active device.",
+  "domainDeviceTransferInvalid": "The transfer code is invalid or expired. Get a new one from the active device.",
+  "domainDeviceSessionConflict": "This device connection conflicts with an existing session.",
+  "domainDeviceSecureOriginRequired": "Use HTTPS to connect. HTTP is allowed only for loopback testing.",
+  "domainDeviceStorageUnavailable": "Secure device storage is unavailable. Try again after unlocking the device.",
+  "domainNotConnected": "Not connected to the server.",
+  "domainServiceDisposed": "This session is closed.",
+  "domainNetworkTimeout": "Connection timed out. Try again.",
+  "domainNetworkUnavailable": "Cannot reach the server. Check your connection.",
+  "domainInvalidResponse": "Invalid server response.",
+  "domainServerFailure": "The request could not be completed. Try again.",
+  "domainCorruptSave": "Saved data is damaged or unsupported. Your file and progress were kept.",
+  "domainStorageFailure": "Cannot read or save data. Your last saved progress was kept.",
+  "domainNfcUnsupported": "NFC requires an iOS or Android phone.",
+  "domainNfcInterrupted": "NFC was interrupted. Scan again.",
+  "domainNfcReadFailed": "Could not read the tag. Scan again.",
+  "domainNfcDisposed": "NFC reader is closed.",
+  "domainNfcBusy": "Another NFC scan is in progress.",
+  "domainNfcStopFailed": "Could not stop NFC. Try again.",
+  "domainNfcDisabled": "NFC is unavailable or turned off.",
+  "domainNfcInvalidTag": "Scan an NTAG213, 215 or 216 tag.",
+  "domainNfcTimeout": "Scan timed out. Try again.",
+  "domainNfcStartFailed": "Could not start NFC. Try again.",
+  "domainShareNotReady": "Share image is not ready. Try again.",
+  "domainShareFailed": "Could not create the share image.",
+  "domainInvalidString": "Enter a valid {field} (up to {max} characters).",
+  "@domainInvalidString": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "domainInvalidInteger": "{field} must be a whole number from {min} to {max}.",
+  "@domainInvalidInteger": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "domainInvalidBoolean": "Invalid value for {field}.",
+  "@domainInvalidBoolean": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "domainUnknownError": "Something went wrong. Try again.",
+  "domainScanSelf": "Your card",
+  "domainScanPlayer": "Add friend or battle",
+  "domainScanCheckpoint": "Checkpoint scanned",
+  "domainScanBooth": "Booth scanned",
+  "domainScanStation": "Station scanned",
+  "domainScanUnknown": "Unknown NTAG",
+  "domainScanBindStation": "Unassigned tag. Choose a station.",
+  "domainLedgerAdminParameters": "Game settings updated",
+  "domainLedgerAdminStation": "Station updated",
+  "domainLedgerBadgeBind": "Badge bound",
+  "domainLedgerProfileEdit": "Profile updated",
+  "domainLedgerCheckin": "Checked in",
+  "domainLedgerEarlyUnlock": "Early reward unlocked",
+  "domainLedgerEarlyClaim": "Early reward registered",
+  "domainLedgerScanSelf": "Own badge scanned",
+  "domainLedgerScanPlayer": "Player scanned",
+  "domainLedgerScanCheckpointRepeat": "Checkpoint already collected",
+  "domainLedgerScanCheckpoint": "Checkpoint collected",
+  "domainLedgerScanBooth": "Booth visited",
+  "domainLedgerScanStation": "Station scanned",
+  "domainLedgerScanUnknown": "Unknown tag scanned",
+  "domainLedgerFriendRequest": "Friend invited",
+  "domainLedgerBattleAccept": "Battle accepted",
+  "domainLedgerFriendAdd": "Friend added",
+  "domainLedgerMissionComplete": "Hashtag task completed",
+  "domainLedgerBattleInvite": "Battle invited",
+  "domainLedgerBattleCancel": "Battle invitation cancelled",
+  "domainLedgerBattleRound": "Battle round played",
+  "domainLedgerBattleSettle": "Battle completed",
+  "domainLedgerBattlePeek": "Peek card used",
+  "domainLedgerBattleInviteExpired": "Battle invitation expired",
+  "domainLedgerPackOpen": "Packs opened",
+  "domainLedgerEggBuy": "Planet hatched",
+  "domainLedgerSeriesComplete": "Planet series completed",
+  "domainLedgerAppearanceEdit": "Appearance updated",
+  "domainLedgerHintEarn": "Hint earned",
+  "domainLedgerHintRedeem": "Hint redeemed",
+  "domainLedgerStationBind": "Station tag bound",
+  "domainLedgerMockPhase": "Event phase changed",
+  "domainLedgerMockStaff": "Staff permission changed",
+  "domainLedgerMockAgenda": "Agenda packs received",
+  "domainLedgerMockBoothComplete": "Booth task completed",
+  "domainLedgerMockRemote": "Packs received",
+  "domainLedgerMockPhoto": "Photo reward received",
+  "domainLedgerCheatCoins": "Coins added",
+  "domainNfcPrompt": "Hold your phone near an NTAG badge or checkpoint.",
+  "domainLedgerCoins": "{label} · Coins {delta}",
+  "@domainLedgerCoins": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "domainPacksAdded": "{count, plural, one{Added 1 pack} other{Added {count} packs}}",
+  "@domainPacksAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "domainFieldAction": "Action",
+  "domainFieldContact": "Contact details",
+  "domainFieldNickname": "Nickname",
+  "domainFieldUid": "Tag UID",
+  "domainFieldScanId": "Scan ID",
+  "domainFieldPlayerId": "Player",
+  "domainFieldCard": "Card",
+  "domainFieldAsCard": "Wild card choice",
+  "domainFieldAll": "Open all",
+  "domainFieldSeries": "Series",
+  "domainFieldPlanet": "Planet",
+  "domainFieldStyle": "Card style",
+  "domainFieldStationId": "Station",
+  "domainFieldPhase": "Event phase",
+  "domainFieldSlot": "Agenda slot",
+  "domainFieldDeliveryId": "Delivery ID",
+  "domainFieldAmount": "Amount",
+  "domainFieldReason": "Reason",
+  "domainFieldEnabled": "Enabled",
+  "domainFieldName": "Name",
+  "domainFieldPacks": "Packs",
+  "domainFieldLimit": "Claim limit",
+  "domainFieldRemaining": "Stock",
+  "domainFieldOpen": "Open",
+  "domainFieldRandomEggPrice": "Random egg price",
+  "domainFieldSeriesEggPrice": "Series egg price",
+  "domainFieldHintThreshold": "Hint threshold",
+  "domainFieldMissionCoins": "Task coins",
+  "domainFieldAgendaPacks": "Agenda packs",
+  "domainFieldBattleWinCoins": "Battle win coins",
+  "domainFieldBattleDrawCoins": "Battle draw coins",
+  "domainFieldBattleCooldownSeconds": "Battle cooldown",
+  "domainField": "Field",
+  "domainInvalidSeries": "Choose a planet series from 1 to 6.",
+  "domainLedgerOpenedPacks": "{count, plural, one{Opened 1 pack} other{Opened {count} packs}}",
+  "@domainLedgerOpenedPacks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "domainLedgerFoundCheckpoint": "Checkpoint {number}: +1 {card}",
+  "@domainLedgerFoundCheckpoint": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "domainPlanetLabel": "{series} · {color}",
+  "@domainPlanetLabel": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      },
+      "color": {
+        "type": "String"
+      }
+    }
+  },
+  "domainLedgerHatchedPlanet": "Hatched {planet}",
+  "@domainLedgerHatchedPlanet": {
+    "placeholders": {
+      "planet": {
+        "type": "String"
+      }
+    }
+  },
+  "domainLedgerCompletedSeries": "{series} series completed",
+  "@domainLedgerCompletedSeries": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "domainLedgerCompletedMission": "#{tag} task completed",
+  "@domainLedgerCompletedMission": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "domainGrantTooLarge": "The amount exceeds the inventory limit.",
+  "shellOffline": "Offline · saved on this device",
+  "shellConnected": "Test server",
+  "shellServerUrl": "Test server URL",
+  "deviceTransferIn": "Transfer to this device",
+  "deviceTransferOut": "Transfer to another device",
+  "deviceTransferCode": "Transfer code",
+  "deviceTransferWarning": "This replaces any saved player for this server. The device that issued the code will be signed out.",
+  "deviceTransferResume": "Leave blank to retry a submitted code.",
+  "deviceTransferShare": "Enter this code on the new device within 10 minutes. Keep it private. Using it signs this device out.",
+  "deviceTransferCopy": "Copy code",
+  "deviceTransferCopied": "Transfer code copied.",
+  "deviceTransferCopyFailed": "Couldn't copy the code.",
+  "shellInvalidServerUrl": "Enter an HTTP or HTTPS server address without a path.",
+  "shellUnsupportedMode": "Unsupported mode: {mode}",
+  "@shellUnsupportedMode": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "shellChooseMode": "Choose mode",
+  "shellIdentity": "SITCON 2027 · Player card",
+  "shellCountdown": "{label}: {seconds} seconds left",
+  "@shellCountdown": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "shellRevealCard": "Unrevealed card. Tap to reveal.",
+  "shellRevealSpecial": "Unrevealed special card. Tap to reveal.",
+  "shellNameRequired": "Enter a nickname",
+  "shellTagRange": "Choose 1–3 {category} tags",
+  "@shellTagRange": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "shellTagConflict": "Choose only one: {tags}",
+  "@shellTagConflict": {
+    "placeholders": {
+      "tags": {
+        "type": "String"
+      }
+    }
+  },
+  "shellCreateCard": "Create card",
+  "shellEditCard": "Edit card",
+  "shellNickname": "Nickname",
+  "shellContact": "Contact (optional)",
+  "shellPublicContact": "Visible on your card",
+  "shellTagsHint": "Choose 1–3 public tags per category. Tags lock after saving.",
+  "shellTagsLocked": "Tags cannot be changed after saving.",
+  "shellOpposingTag": "Conflicts with a selected tag",
+  "shellTagLimit": "Up to 3 per category",
+  "shellFinishCard": "Create card",
+  "shellCheckIn": "Check in",
+  "shellBindBadge": "Bind your badge",
+  "shellBadgeHint": "Binding cannot be undone here; contact the help desk if lost.",
+  "shellScanBadge": "Scan my badge",
+  "shellCheckInNotOpen": "Check-in has not opened",
+  "shellTestCheckIn": "Use test badge",
+  "shellEarlyBird": "Early-bird rewards",
+  "shellEarlyHint": "1 random egg + 1 pack, once per player. Unlocks after check-in when the event starts.",
+  "shellEarlyClaimed": "Claimed",
+  "shellEarlyClaim": "Claim test QR reward",
+  "shellEarlyUnlocked": "Unlocked in collection and packs",
+  "shellEarlyLocked": "Unlocks after event check-in",
+  "shellEarlyClosed": "Available before the event only",
+  "shellTutorialScan": "Scan badges, checkpoints and stations. Friends and battles require both players to scan.",
+  "shellTutorialEggs": "Earn coins from tasks and battles. Random eggs cost {random}; series eggs cost {series}.",
+  "@shellTutorialEggs": {
+    "placeholders": {
+      "random": {
+        "type": "int"
+      },
+      "series": {
+        "type": "int"
+      }
+    }
+  },
+  "shellTutorialTasks": "Find 3 friends per task for {coins} coins. Each checkpoint gives 1 card.",
+  "@shellTutorialTasks": {
+    "placeholders": {
+      "coins": {
+        "type": "int"
+      }
+    }
+  },
+  "shellTutorialStep": "Tutorial {step}/3",
+  "@shellTutorialStep": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      }
+    }
+  },
+  "shellStart": "Start",
+  "shellNext": "Next",
+  "shellSkipTutorial": "Skip",
+  "shellViewTasks": "View tasks",
+  "shellMissionComplete": "Task complete",
+  "shellHintEarned": "Checkpoint hint",
+  "shellCheckedIn": "Checked in",
+  "shellReward": "Reward received",
+  "shellInventoryAdded": "Inventory added",
+  "shellInventoryRemoved": "Inventory removed",
+  "shellInventoryUpdated": "Inventory updated",
+  "shellInventoryPeekCards": "Peek cards",
+  "shellInventoryHints": "Hint credits",
+  "shellCheckInReward": "12 starter cards: 4 scissors, 4 rock, 4 paper. Six tasks are ready.",
+  "shellMore": "More",
+  "shellCheats": "Cheats",
+  "shellOpenPacks": "Open packs",
+  "shellEggs": "Eggs",
+  "shellShop": "Shop",
+  "shellCollection": "Collection",
+  "shellFriends": "Friends",
+  "shellRankings": "Rankings",
+  "shellAppearance": "Appearance",
+  "shellLedger": "Card & coin history",
+  "shellBattleHistory": "Battle history",
+  "shellRecap": "Recap",
+  "shellTutorial": "Tutorial",
+  "shellPhaseBefore": "Before event",
+  "shellPhaseEnded": "Event ended",
+  "shellPhaseActive": "Event active",
+  "shellWaitingOpponent": "Waiting for opponent scan",
+  "shellMyCard": "My card",
+  "shellScanHint": "Scan a badge, checkpoint or station",
+  "shellCheckInFirst": "Check in first",
+  "shellBattleClosed": "Battles are closed",
+  "shellBattleOngoing": "A battle is in progress",
+  "shellNotEnoughCards": "At least 3 hand cards required",
+  "shellBattle": "Rock paper scissors",
+  "shellBattleReady": "Scan a player badge to battle.",
+  "shellCooldown": "Battle cooldown",
+  "shellEndedHint": "Battles and shop are closed.",
+  "shellHand": "Hand cards",
+  "shellNoPacks": "Get packs from sessions, photos or roaming stations.",
+  "shellBattleRound": "Battle · round {round}",
+  "@shellBattleRound": {
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "shellBattleRemaining": "{seconds}s left · Return to battle",
+  "@shellBattleRemaining": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "shellCoins": "{count} coins",
+  "@shellCoins": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shellCards": "{count, plural, =1{1 hand card} other{{count} hand cards}}",
+  "@shellCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shellPacks": "{count, plural, =1{1 unopened pack} other{{count} unopened packs}}",
+  "@shellPacks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shellCooldownRemaining": "Cooldown: {seconds}s",
+  "@shellCooldownRemaining": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "shellBattleStats": "{total} battles · {wins} wins · {draws} draws · {losses} losses",
+  "@shellBattleStats": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "wins": {
+        "type": "int"
+      },
+      "draws": {
+        "type": "int"
+      },
+      "losses": {
+        "type": "int"
+      }
+    }
+  },
+  "shellPointsRank": "{points} points · Rank {rank}",
+  "@shellPointsRank": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      },
+      "rank": {
+        "type": "String"
+      }
+    }
+  },
+  "shellCollectionProgress": "{planets}/42 planets · {series}/6 complete series",
+  "@shellCollectionProgress": {
+    "placeholders": {
+      "planets": {
+        "type": "int"
+      },
+      "series": {
+        "type": "int"
+      }
+    }
+  },
+  "shellPeekCards": "{count} peek cards (not hand cards)",
+  "@shellPeekCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shellApplied": "Applied",
+  "shellPositiveAmount": "Enter a positive whole number",
+  "shellAddResource": "Add {resource}",
+  "@shellAddResource": {
+    "placeholders": {
+      "resource": {
+        "type": "String"
+      }
+    }
+  },
+  "shellOfflineOnly": "Available offline only",
+  "shellScenarios": "Scenarios",
+  "shellPhaseHint": "Rewards require check-in while the event is active.",
+  "shellDeliveryId": "Delivery ID",
+  "shellSimulateDelivery": "Simulate pack delivery",
+  "shellDeliveryHint": "Each delivery ID is processed once.",
+  "shellAgendaId": "Session ID",
+  "shellAgendaReward": "Session reward",
+  "shellPhotoReward": "Photo reward",
+  "shellScenarioLimits": "Once per session; photo once per player.",
+  "shellCompleteBooth": "Complete",
+  "shellBoothHint": "Booth confirmations advance hints, not coins or packs.",
+  "shellStaffPermission": "Station binding permission",
+  "shellStaffHint": "Bind an unknown NTAG as a station in Scan.",
+  "collectionChooseSeries": "Choose a series",
+  "collectionSeriesComplete": "{series} · complete",
+  "@collectionSeriesComplete": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionSeriesProgress": "{series} · {count}/7",
+  "@collectionSeriesProgress": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionBuyRandomTitle": "Buy a random egg?",
+  "collectionBuySeriesTitle": "Buy a {series} egg?",
+  "@collectionBuySeriesTitle": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionRandomConfirmation": "Unlock one of {remaining, plural, one{your last unowned planet} other{your {remaining} unowned planets}} at random.\n\nPrice: {price} coins\nBalance after purchase: {balance} coins\n\nPurchases cannot be undone.",
+  "@collectionRandomConfirmation": {
+    "placeholders": {
+      "remaining": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "price": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "balance": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionSeriesConfirmation": "Unlock one of {remaining, plural, one{your last unowned color} other{your {remaining} unowned colors}} at random.\n\nPrice: {price} coins\nBalance after purchase: {balance} coins\n\nPurchases cannot be undone.",
+  "@collectionSeriesConfirmation": {
+    "placeholders": {
+      "remaining": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "price": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "balance": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionConfirmPurchase": "Buy",
+  "collectionCheckInFirst": "Check in first",
+  "collectionShopActiveOnly": "Shop opens during the event",
+  "collectionAllPlanets": "All planets collected",
+  "collectionMissingCoins": "Need {count, plural, one{1 more coin} other{{count} more coins}}",
+  "@collectionMissingCoins": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionRandomEggPrice": "Random egg · {price} coins",
+  "@collectionRandomEggPrice": {
+    "placeholders": {
+      "price": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionSeriesEggPrice": "Series egg · {price} coins",
+  "@collectionSeriesEggPrice": {
+    "placeholders": {
+      "price": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionAppearance": "Appearance",
+  "collectionTitle": "Planet collection",
+  "collectionPlanetProgress": "{count}/42 planets",
+  "@collectionPlanetProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionCompletedSeries": "{count}/6 series complete · checkpoints counted separately",
+  "@collectionCompletedSeries": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionBaseCardDescription": "Available to everyone; not part of the 42 planets",
+  "collectionAcquiredAt": "Acquired: {time}",
+  "@collectionAcquiredAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionPlanetLocked": "Locked. A {series} egg unlocks a random unowned color in this series.",
+  "@collectionPlanetLocked": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionSetRepresentative": "Use this planet",
+  "collectionCardStyles": "Card style",
+  "collectionDefaultStyle": "Default",
+  "collectionApplyStyle": "Apply {series} style",
+  "@collectionApplyStyle": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionUnlockStyle": "Collect all 7 {series} colors to unlock",
+  "@collectionUnlockStyle": {
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionShopTitle": "Egg shop",
+  "collectionHatchTitle": "Hatch an egg",
+  "collectionRevealEgg": "Hatch",
+  "collectionRepresentativeSelected": "Current planet ✓",
+  "collectionSeriesRewards": "Rewards: 1 wild card, 1 peek card, 1 pack and this series’ card style. Tap to reveal your special cards.",
+  "collectionWildReward": "Wild card ×1",
+  "collectionPeekReward": "Peek card ×1",
+  "collectionChangeStyle": "Change card style",
+  "collectionOpenRewardPack": "Open reward pack",
+  "collectionBuyAnotherEgg": "Buy another random egg",
+  "collectionShopClosed": "Shop closed",
+  "collectionPacksTitle": "Card packs",
+  "collectionUnopenedPacks": "{count, plural, one{1 unopened pack} other{{count} unopened packs}}",
+  "@collectionUnopenedPacks": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionSkipAnimation": "Skip animation",
+  "collectionPackContents": "3 regular cards. Pack selection doesn't affect odds.",
+  "collectionPreviousPack": "Previous pack",
+  "collectionPackPosition": "Pack {number} of {total}",
+  "@collectionPackPosition": {
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "total": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionNextPack": "Next pack",
+  "collectionOpenPackSemantics": "Card pack. Swipe right or tap to open.",
+  "collectionPackBrand": "SITCON\nCARD PACK",
+  "collectionTearRight": "Tear right →",
+  "collectionOpenPack": "Open pack",
+  "collectionOpenAllPacks": "Open all {count, plural, one{1 pack} other{{count} packs}}",
+  "@collectionOpenAllPacks": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionNoPacks": "No packs",
+  "collectionCardsAdded": "Cards added to your hand",
+  "collectionRevealCards": "Reveal your cards",
+  "collectionCardsRevealed": "{count, plural, one{1 card revealed} other{{count} cards revealed}}",
+  "@collectionCardsRevealed": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionAddToHand": "Add to hand",
+  "collectionRevealLastCard": "Reveal last card",
+  "collectionRevealNextCard": "Reveal next card",
+  "collectionPacksOpened": "{count, plural, one{1 pack opened} other{{count} packs opened}}",
+  "@collectionPacksOpened": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionHandChange": "{before} → {after}",
+  "@collectionHandChange": {
+    "placeholders": {
+      "before": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "after": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "collectionOpenAnotherPack": "Open another pack",
+  "taskHashtags": "Hashtags",
+  "taskBooths": "Booths",
+  "taskMissionSummary": "{completed}/6 completed · {coins} coins earned",
+  "@taskMissionSummary": {
+    "placeholders": {
+      "completed": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "coins": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskMissionRules": "3 confirmed friends → {coins} coins per mission",
+  "@taskMissionRules": {
+    "placeholders": {
+      "coins": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskMissionProgress": "{kind} · {count}/3 · {status}",
+  "@taskMissionProgress": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "taskOwnTag": "Your tag",
+  "taskNewTag": "New tag",
+  "taskInProgress": "Incomplete",
+  "taskCompleted": "Completed",
+  "taskNoMatchingFriends": "No matching friends yet",
+  "taskCompletedAt": "Completed: {time}",
+  "@taskCompletedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "taskCheckpointProgress": "{count}/42 collected · 1 card for each first scan",
+  "@taskCheckpointProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskPostcardUnlocked": "Postcard unlocked",
+  "taskPostcard": "Postcard",
+  "taskPostcardRemaining": "Find {count, plural, one{1 more checkpoint} other{{count} more checkpoints}} to unlock your postcard.",
+  "@taskPostcardRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskOpenPostcard": "Open postcard",
+  "taskRedeemHint": "Redeem hint · {count} available",
+  "@taskRedeemHint": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskNextHint": "Complete {count, plural, one{1 more battle or booth mission} other{{count} more battles or booth missions}} to earn a hint",
+  "@taskNextHint": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskAllCheckpointsFound": "All checkpoints found",
+  "taskHintsActiveOnly": "Hints are available during the event",
+  "taskHint": "Checkpoint hint",
+  "taskLimitedCheckpoints": "Limited editions · speakers / staff / sponsors",
+  "taskCheckpointNumber": "#{number}",
+  "@taskCheckpointNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "taskNotFound": "Not found",
+  "taskCollected": "Collected",
+  "taskCheckpointTitle": "Checkpoint #{number}",
+  "@taskCheckpointTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "taskAreaHidden": "Redeem a hint to reveal the area",
+  "taskCollectedAt": "Collected: {time}",
+  "@taskCollectedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "taskHintNotRedeemed": "No hint redeemed for this checkpoint",
+  "taskBoothRules": "Staff must scan your badge to confirm. Website visits don't complete tasks.",
+  "taskBoothStatus": "{visit} · {mission}\n{url}",
+  "@taskBoothStatus": {
+    "placeholders": {
+      "visit": {
+        "type": "String"
+      },
+      "mission": {
+        "type": "String"
+      },
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "taskVisited": "Visited",
+  "taskNotVisited": "Not visited",
+  "taskPostcardHeading": "SITCON 2027 / POSTCARD",
+  "taskPostcardGreeting": "Dear {name},",
+  "@taskPostcardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "taskPostcardBody": "You found {count, plural, one{1 checkpoint} other{{count} checkpoints}} at SITCON 2027.",
+  "@taskPostcardBody": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "taskPhysicalPostcardNotice": "Physical postcard pickup and mailing details are pending. Check on-site announcements.",
+  "socialBoothOpenError": "Could not open the booth website. Try again.",
+  "socialCheckpointNumber": "Checkpoint #{number}",
+  "@socialCheckpointNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "socialCheckpointProgress": "Checkpoints {count}/42",
+  "@socialCheckpointProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "socialPostcardUnlocked": "Postcard unlocked",
+  "socialViewCheckpoints": "View checkpoints",
+  "socialStationSupply": "Station supply",
+  "socialScanResult": "Scan result",
+  "socialScanPaused": "NFC paused",
+  "socialScanStarting": "Preparing NFC",
+  "socialScanReady": "Ready to scan",
+  "socialScanProcessing": "Processing scan",
+  "socialScanCancelled": "NFC cancelled",
+  "socialScanError": "NFC unavailable",
+  "socialScanInstruction": "Hold a tag to the back of your phone",
+  "socialScanDuplicateHint": "Same tag? Reopen Scan to scan again.",
+  "socialTestScan": "Test scan",
+  "socialUid": "NTAG UID",
+  "socialSubmitTestScan": "Submit test scan",
+  "socialScanFixtures": "Test tags",
+  "socialOwnBadge": "My badge",
+  "socialCheckpointFixtures": "42 checkpoints",
+  "socialStationFixture": "{packs} packs/visit · {status} · {remaining} left",
+  "@socialStationFixture": {
+    "placeholders": {
+      "packs": {
+        "type": "int"
+      },
+      "status": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "socialOpen": "Open",
+  "socialClosed": "Closed",
+  "socialUnknownTag": "Unassigned NTAG",
+  "socialMyCard": "My card",
+  "socialPlayer": "Player",
+  "socialScanPlayerFirst": "Scan their badge first",
+  "socialCooldownSeconds": "Cooldown: {seconds}s",
+  "@socialCooldownSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "socialMissionProgress": "Matching missions",
+  "socialMissionStep": "#{tag}  {before}/3 → {after}/3",
+  "@socialMissionStep": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      },
+      "before": {
+        "type": "int"
+      },
+      "after": {
+        "type": "int"
+      }
+    }
+  },
+  "socialAlreadyFriends": "Already friends",
+  "socialExchangeCards": "Exchange cards",
+  "socialAddFriend": "Add friend",
+  "socialFriendRequests": "Friend requests",
+  "socialFriendRequestPending": "Waiting for them to accept",
+  "socialAccept": "Accept",
+  "socialDecline": "Decline",
+  "socialWaitingReciprocal": "Waiting for their return scan",
+  "socialFriendActiveOnly": "Friend requests open during the event",
+  "socialAskReciprocal": "Ask them to scan your badge",
+  "socialTestAcceptFriend": "Test: accept friend request",
+  "socialFriendExpired": "Request expired",
+  "socialBattle": "Battle",
+  "socialInviteBattle": "Invite to battle",
+  "socialBattleRules": "Up to 3 × 10s rounds · {seconds}s cooldown",
+  "@socialBattleRules": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "socialInviteCancelled": "Invitation cancelled",
+  "socialInviteCancelledHint": "No cards were spent.",
+  "socialInviteSent": "Invitation sent",
+  "socialInviteReceived": "Battle invitation",
+  "socialBattleRespond": "Accept or decline",
+  "socialWaitingBattleAcceptance": "Waiting for opponent to accept",
+  "socialWaitingOpponentCard": "Waiting for opponent's card",
+  "socialReady": "Ready",
+  "socialWaitingForReady": "Waiting for opponent to be ready",
+  "socialBattleResult": "Battle result",
+  "socialBattleAcceptanceHint": "Cards are spent only after the return scan starts the battle.",
+  "socialTestAcceptBattle": "Test: accept battle",
+  "socialBattleRewards": "Battle rewards",
+  "socialBattleRewardSummary": "Points +{points} · Coins +{coins}",
+  "@socialBattleRewardSummary": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      },
+      "coins": {
+        "type": "int"
+      }
+    }
+  },
+  "socialNoCardDraw": "No card drawn",
+  "socialCardDraw": "Drew {card} ×1",
+  "@socialCardDraw": {
+    "placeholders": {
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "socialCardsUsed": "{count, plural, =1{1 hand card used} other{{count} hand cards used}}",
+  "@socialCardsUsed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "socialBattleFriendAdded": "Friendship and matching mission progress updated.",
+  "socialBattleCooldown": "Battle cooldown",
+  "socialRoundScore": "Round {round}/3 · {wins} : {losses}",
+  "@socialRoundScore": {
+    "placeholders": {
+      "round": {
+        "type": "int"
+      },
+      "wins": {
+        "type": "int"
+      },
+      "losses": {
+        "type": "int"
+      }
+    }
+  },
+  "socialChooseCard": "Choose a card",
+  "socialAutoPlayHint": "Auto-play when time runs out.",
+  "socialWildHint": "Wild card move",
+  "socialPeekUsed": "Peek used this battle",
+  "socialPeekConfirm": "Tap again to confirm ({seconds}s)",
+  "@socialPeekConfirm": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "socialPeekAction": "Peek ×{count} · Tap twice to use",
+  "@socialPeekAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "socialPeekResult": "Opponent's hand",
+  "socialPeekHint": "Opponent notified",
+  "socialRoundHistory": "Rounds",
+  "socialCardVersus": "{mine} vs {opponent}",
+  "@socialCardVersus": {
+    "placeholders": {
+      "mine": {
+        "type": "String"
+      },
+      "opponent": {
+        "type": "String"
+      }
+    }
+  },
+  "socialWildMove": "{card} (Wild)",
+  "@socialWildMove": {
+    "placeholders": {
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "socialAutomaticResult": "{result} · Automatic play",
+  "@socialAutomaticResult": {
+    "placeholders": {
+      "result": {
+        "type": "String"
+      }
+    }
+  },
+  "socialRoundReveal": "Round {round} · Reveal",
+  "@socialRoundReveal": {
+    "placeholders": {
+      "round": {
+        "type": "int"
+      }
+    }
+  },
+  "socialArena": "Cards",
+  "socialMyMove": "My move",
+  "socialWaitingMove": "Waiting for a card",
+  "socialOpponentMove": "Opponent's move",
+  "socialRevealHint": "Cards are revealed when both players submit.",
+  "socialFriendCount": "{count, plural, =1{1 friend} other{{count} friends}}",
+  "@socialFriendCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "socialSearchNickname": "Search nickname",
+  "socialAll": "All",
+  "socialNoMatchingFriends": "No matching friends",
+  "socialRanking": "Rankings",
+  "socialRankingFinal": "Event ended · Rankings final",
+  "socialNotRanked": "Not ranked yet",
+  "socialMyRank": "My rank: #{rank}",
+  "@socialMyRank": {
+    "placeholders": {
+      "rank": {
+        "type": "int"
+      }
+    }
+  },
+  "socialBindStation": "Bind station",
+  "socialStationDetails": "{packs} packs/visit · {limit} visits/person\n{remaining} packs left · {status}",
+  "@socialStationDetails": {
+    "placeholders": {
+      "packs": {
+        "type": "int"
+      },
+      "limit": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "socialConfirmBinding": "Bind tag",
+  "socialBindingUnauthorized": "Station binding permission required",
+  "socialChooseStation": "Select a station first",
+  "socialBindingComplete": "Tag bound",
+  "socialBindingCompleteHint": "Scan this tag to claim the station's packs.",
+  "utilityBattleHistory": "Battle history",
+  "utilityLedger": "Cards and coins",
+  "utilityRoundResult": "Round {round} · {result}",
+  "@utilityRoundResult": {
+    "placeholders": {
+      "round": {
+        "type": "int"
+      },
+      "result": {
+        "type": "String"
+      }
+    }
+  },
+  "utilityAutomaticPlay": "Automatic play",
+  "utilityCoinBalance": "Coin balance: {count}",
+  "@utilityCoinBalance": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "utilityPointsSeparate": "Coins do not affect ranking points.",
+  "utilityRecapTitle": "My SITCON 2027",
+  "utilityNoMoves": "No moves yet",
+  "utilityStoryTitle": "SITCON 2027\nMY RECAP",
+  "utilityBattles": "Battles",
+  "utilityBattleCount": "{count, plural, =1{1 battle} other{{count} battles}}",
+  "@utilityBattleCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "utilityWinRate": "Win rate",
+  "utilityCompleteSeries": "Complete series",
+  "utilityPeopleCount": "{count, plural, =1{1 friend} other{{count} friends}}",
+  "@utilityPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "utilityHashtagMissions": "Hashtag missions",
+  "utilityFavoriteMove": "Favorite move",
+  "utilityOfflineRecord": "Offline demo record",
+  "utilityTestRecord": "Test server record",
+  "utilityGeneratingImage": "Creating image…",
+  "utilityShareStory": "Share recap image",
+  "utilityRecapAfterEvent": "Final recap available after the event",
+  "operatorRoleUser": "Attendee",
+  "operatorRoleStaff": "Staff",
+  "operatorRoleBooth": "Booth staff",
+  "operatorModeUser": "Attendee",
+  "operatorModeStaff": "Staff",
+  "operatorModeBooth": "Booth",
+  "operatorAssignedBooth": "Assigned booth",
+  "operatorNoBooth": "Ask an administrator to assign a booth.",
+  "operatorReadOnlyResult": "Tag details",
+  "operatorCompletionReceipt": "Booth task",
+  "operatorPermissionChanged": "Assignment changed. Return to Scan.",
+  "operatorAlreadyCompleted": "Already completed",
+  "operatorCompletionRecorded": "Completed",
+  "operatorScanInstruction": "Scan badge to complete task",
+  "operatorDemoRole": "Role",
+  "roleDomainOperatorPermission": "This account cannot use that scanner mode.",
+  "roleDomainBoothAssignmentRequired": "A valid booth assignment is required.",
+  "roleDomainOperatorSelfScan": "Scan an attendee’s badge.",
+  "roleDomainStaffIdentity": "Attendee badge",
+  "roleDomainBoothAlreadyComplete": "Already completed",
+  "roleDomainBoothTaskComplete": "Task completed",
+  "roleDomainAttendeeBadgeRequired": "Scan a checked-in attendee’s badge.",
+  "roleDomainStaffStationInfo": "Station details",
+  "roleDomainOperatorTagInfo": "Event tag",
+  "roleDomainAmbiguousTag": "This tag has conflicting saved bindings. Ask an administrator to resolve them.",
+  "roleDomainAmbiguousBadge": "This badge has conflicting assignments.",
+  "roleDomainInvalidScannerMode": "Unknown scanner mode.",
+  "roleDomainInvalidAccountRole": "Unknown account role.",
+  "roleDomainLedgerRole": "Account role assignment updated",
+  "roleDomainLedgerOperatorScan": "Staff scan",
+  "roleDomainLedgerBoothComplete": "Booth task completed"
+}
