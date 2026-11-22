@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sitcon_backend/game/game_service.dart';
 import 'package:sitcon_app/l10n/localization.dart';
+import 'package:sitcon_app/services/game/demo_controls.dart';
 import 'package:sitcon_app/services/game/multiplayer.dart';
 import 'package:sitcon_app/services/nfc/automatic_scan_controller.dart';
 import 'package:sitcon_backend/game/game_engine.dart';
@@ -99,6 +100,11 @@ class _Game extends GameEngine {
     if (remoteResult case final result?) return result;
     return super.scan(uid, key, mode: mode);
   }
+}
+
+class _RemoteStationGame extends _Game implements RemoteStationFixtures {
+  @override
+  final stationFixtureUids = const {'station-remote': '04A70000000042'};
 }
 
 class _LiveGame extends _Game implements Multiplayer {
@@ -207,7 +213,7 @@ class _FixtureVm extends GameViewModel {
   @override
   bool get testToolsEnabled => true;
   @override
-  bool get isOfflineDemo => true;
+  bool get isOfflineDemo => stationFixtureUids == null;
 }
 
 class _DisposalScope extends StatefulWidget {
@@ -618,6 +624,28 @@ void main() {
       expect(game.ledger.any((entry) => entry.reason == 'scan.self'), isTrue);
     },
   );
+
+  testWidgets('remote list shows unbound stations and scans the bound UID', (
+    tester,
+  ) async {
+    final game = _RemoteStationGame();
+    await game.initialize();
+    for (final id in ['station-remote', 'station-unbound']) {
+      await game.configureStation(
+        Station(id: id, name: id, packs: 2, remaining: 5),
+      );
+    }
+    await game.configureRole(AccountRole.staff);
+    await game.bindStation('04A70000000042', 'station-remote');
+    await _launch(tester, _Reader(), fixtures: true, service: game);
+    final unbound = find.byKey(
+      const ValueKey('scan-fixture-station-station-unbound'),
+    );
+    expect(tester.widget<ListTile>(unbound).onTap, isNull);
+    final before = game.packs;
+    await flow.tapKey(tester, 'scan-fixture-station-station-remote');
+    expect(game.packs, before + 2);
+  });
 
   testWidgets('a remote attendee scan opens a read-only card', (tester) async {
     final reader = _Reader();

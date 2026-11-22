@@ -78,13 +78,18 @@ void main() {
         payload = jsonDecode(await utf8.decoder.bind(request).join());
         await fixture.bindBadge(uid);
       }
-      sendState(request, calls.length);
+      sendState(request, calls.length, {
+        if (request.method == 'GET')
+          'stationFixtureUids': {'station-custom': '04A70000000042'},
+      });
     };
 
     await client.initialize();
     expect(client.checkedIn, isFalse);
+    expect(client.stationFixtureUids, {'station-custom': '04A70000000042'});
     await client.bindBadge(uid);
     expect(client.checkedIn, isTrue);
+    expect(client.stationFixtureUids, isNull);
     expect(client.multiplayer, isNull);
     expect(calls, [
       ('GET', '/api/players/named-player/state'),

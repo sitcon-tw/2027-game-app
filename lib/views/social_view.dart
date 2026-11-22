@@ -490,6 +490,7 @@ class _ScanViewState extends State<ScanView>
                       ),
                     for (final station in widget.vm.stations)
                       if (widget.vm.isOfflineDemo ||
+                          widget.vm.stationFixtureUids != null ||
                           _stationFixtures.containsKey(station.id))
                         ListTile(
                           key: ValueKey(
@@ -498,23 +499,28 @@ class _ScanViewState extends State<ScanView>
                           leading: const Icon(Icons.inventory_2_outlined),
                           title: Text(stationName(context, station)),
                           subtitle: Text(
-                            context.l10n.socialStationFixture(
-                              station.packs,
-                              station.open
-                                  ? context.l10n.socialOpen
-                                  : context.l10n.socialClosed,
-                              station.remaining,
-                            ),
+                            widget.vm.stationFixtureUids?.containsKey(station.id) == false
+                                ? context.l10n.socialUnknownTag
+                                : context.l10n.socialStationFixture(
+                                    station.packs,
+                                    station.open
+                                        ? context.l10n.socialOpen
+                                        : context.l10n.socialClosed,
+                                    station.remaining,
+                                  ),
                           ),
-                          onTap: widget.vm.busy || scanner.processing
+                          onTap: widget.vm.busy || scanner.processing ||
+                                  (widget.vm.stationFixtureUids?.containsKey(station.id) == false)
                               ? null
                               : () {
                                   if (widget.vm.isOfflineDemo) {
                                     submit(station.id);
                                   } else {
-                                    submit(TestTagIds.stationUid(
-                                      _stationFixtures[station.id]!,
-                                    ));
+                                    final remote = widget.vm.stationFixtureUids;
+                                    final tag = remote == null
+                                        ? TestTagIds.stationUid(_stationFixtures[station.id]!)
+                                        : remote[station.id];
+                                    if (tag != null) submit(tag);
                                   }
                                 },
                         ),

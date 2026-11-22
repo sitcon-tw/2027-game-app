@@ -4,6 +4,7 @@ import 'package:sitcon_backend/game/game_service.dart';
 import 'package:sitcon_backend/game/game_wire.dart';
 import 'package:sitcon_backend/game/observable_game_service.dart';
 
+import 'demo_controls.dart';
 import 'game_api_client.dart';
 import 'multiplayer.dart';
 
@@ -11,7 +12,7 @@ export 'game_api_client.dart' show GameApiException;
 
 /// Native player adapter. All rules, rewards and mutations run on the server.
 /// This deliberately has no admin methods and no offline/mock fallback.
-class HttpGameService extends ObservableGameService implements Multiplayer {
+class HttpGameService extends ObservableGameService implements Multiplayer, RemoteStationFixtures {
   HttpGameService({
     required String baseUrl,
     required this.playerId,
@@ -26,6 +27,9 @@ class HttpGameService extends ObservableGameService implements Multiplayer {
   Future<void> _tail = Future<void>.value();
   Future<void>? _initializing;
   GameSnapshot? _snapshot;
+  Map<String, String>? _stationFixtureUids;
+  @override
+  Map<String, String>? get stationFixtureUids => _stationFixtureUids;
   @override
   MultiplayerState? get multiplayer => _multiplayer;
   MultiplayerState? _multiplayer;
@@ -74,10 +78,17 @@ class HttpGameService extends ObservableGameService implements Multiplayer {
         final multiplayer = live == null
             ? null
             : MultiplayerState.fromJson(live.cast<String, dynamic>());
+        final stationUids = state['stationFixtureUids'] as Map?;
+        final fixtureUids = stationUids == null
+            ? null
+            : Map<String, String>.unmodifiable(
+                stationUids.cast<String, String>(),
+              );
         final serverTime = DateTime.parse(data['serverTime'] as String).toUtc();
         final midpoint = sent.add(received.difference(sent) ~/ 2);
         _clockOffset = serverTime.difference(midpoint);
         _snapshot = snapshot;
+        _stationFixtureUids = fixtureUids;
         _multiplayer = multiplayer;
         _applied = ticket;
         _sequence = sequence;

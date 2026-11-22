@@ -22,6 +22,12 @@ class GameViewModel extends ChangeNotifier {
       isOfflineDemo || const bool.fromEnvironment('TEST_GAMEPLAY');
   DemoControls? get demoControls =>
       _service is DemoControls ? _service as DemoControls : null;
+  Map<String, String>? get stationFixtureUids {
+    final service = _service;
+    return service is RemoteStationFixtures
+        ? (service as RemoteStationFixtures).stationFixtureUids
+        : null;
+  }
   Multiplayer? get _multiplayerService =>
       _service is Multiplayer ? _service as Multiplayer : null;
   MultiplayerState? get _multiplayer => _multiplayerService?.multiplayer;

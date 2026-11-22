@@ -16,3 +16,7 @@ abstract interface class DemoControls {
   Future<void> simulateBoothCompletion(String boothId);
   Future<ScanResult> scanDemoStation(String stationId, String scanId, ScannerMode mode);
 }
+
+abstract interface class RemoteStationFixtures {
+  Map<String, String>? get stationFixtureUids;
+}
